@@ -1,0 +1,5 @@
+java.lang.NumberFormatException: For input string: "entrada de los datos "
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at ejercicio6.Lectura.main(Lectura.java:23)
