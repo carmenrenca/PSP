@@ -7,7 +7,7 @@ public class Saldo {
 	public Saldo(int c) {
 		this.saldo=c;
 	}
-
+//metodo para devolver la cantidad de saldo disponible
 	public int getSaldo() {
 		
 		try {
@@ -19,6 +19,7 @@ public class Saldo {
 		return saldo;
 	}
 
+	
 	public void setSaldo(int s) {
 		try {
 			Thread.sleep(200);
@@ -28,6 +29,10 @@ public class Saldo {
 		}
 		this.saldo =  saldo+s;
 	}
+	
+	
+	//metodo en el que vamos a añadir una cantidad a el saldo total llamando a setSaldo()
+	//primero mostramos la cantidad que se dispone antes de la operación y al final la cantidad con el ingreso
 	
 	public synchronized void añadirsaldo(String n, int c) {
 		System.out.println("Su cantidad actual en la cuenta es de "+this.getSaldo());

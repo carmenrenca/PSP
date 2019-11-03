@@ -4,8 +4,9 @@ public class main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		//creamos un objeto saldo común para todos los hilos, la cuenta en un principio cuenta con 100€
 Saldo s = new Saldo(100);
-System.out.println("Saldo inicial "+s.getSaldo());
+System.out.println("SALDO INICIAL"+s.getSaldo());
 
 Hilos h1 = new Hilos("Hilo1",s);
 
