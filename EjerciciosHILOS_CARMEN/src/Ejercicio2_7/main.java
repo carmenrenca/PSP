@@ -4,6 +4,10 @@ public class main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+//Al no crear un bloque sincronizado no se espera el resultado correcto ya que no hay control sobre esos hilos
+//Al crear un bloque sincronizado en el que entre parentesis le ponemos el objeto compartido 
+//los hilos se ejecutaran de forma ordenada y por turnos
 		contador cont = new contador(0);
 		Hilos h1 = new Hilos("Hilo1", cont);
 		Hilos h2 = new Hilos("Hilo2", cont);
