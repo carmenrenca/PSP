@@ -25,5 +25,5 @@ public class productor extends Thread {
 		
 	}
 	//si quitaramos el sleep lo que pasaría es que el productor va más rapido que el consumidor por lo tanto
-	//da lugar a que el comsumidor se salte algún numero de la cola , y si el sleep lo ponemos en el consum
+	//da lugar a que el comsumidor se salte algún número de la cola
 }
