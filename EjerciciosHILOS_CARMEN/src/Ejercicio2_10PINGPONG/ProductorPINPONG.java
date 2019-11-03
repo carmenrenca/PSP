@@ -10,7 +10,7 @@ public class ProductorPINPONG extends Thread {
 	}
 	
 	public void run() {
-	
+	//creamos un contador y cuando salga par guardará PING y cuando no PONG
 		int n=0;
 	while(true) {
 		n++;
