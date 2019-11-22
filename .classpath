@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="EjerciciosHILOS_CARMEN/src/|Ejercicios tema1/PSP_CamenRendon/src/|Ejercicios tema1/PSP/src/" kind="src" path=""/>
+	<classpathentry kind="src" path="Ejercicios tema1/PSP_CamenRendon/src"/>
+	<classpathentry kind="src" path="Ejercicios tema1/PSP/src"/>
+	<classpathentry kind="src" path="EjerciciosHILOS_CARMEN/src"/>
+	<classpathentry kind="output" path="Ejercicios tema1/PSP/bin"/>
+</classpath>
