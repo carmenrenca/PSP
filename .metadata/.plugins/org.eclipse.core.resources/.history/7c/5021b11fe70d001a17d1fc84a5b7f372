@@ -1,0 +1,38 @@
+package ejercicio3_6;
+
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.SocketException;
+import java.net.UnknownHostException;
+
+import utiles.trycatch;
+
+public class Servidor {
+
+	public static void main(String[] args) throws SocketException, UnknownHostException {
+	trycatch t = new trycatch();
+	
+		DatagramSocket cliente = new DatagramSocket();
+		
+		//DATOS DEL SERVIDOR AL QUE ENVIAR MENSAJE 
+			InetAddress IPServidor = InetAddress.getLocalHost();
+			int puerto=6000;
+			
+			//INTRODUCE DATO POR TECLASE
+			System.out.println("Introduce el mensaje: ");
+			String cadena= "mensaje de prueba del cliente";
+			
+			byte[] enviados = new byte[1024];
+			enviados = cadena.getBytes();
+			
+			//ENVIANDO DATAGRAMA AL SERVIDOR
+			DatagramaPacket envio = new DatagramaPacket(enviados,enviados.length, IPServidor, puerto);
+			
+			
+			
+			
+					
+			
+	}
+
+}
