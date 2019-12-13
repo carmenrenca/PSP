@@ -8,6 +8,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.beancontext.BeanContext;
 
 
 
@@ -19,12 +20,13 @@ public class contadorApplet extends Applet implements ActionListener {
 	private boolean parar1=false;
 	private Font fuente;
 	int n1, n2;
-	private Button b1,b2;
+	private Button b1,b2,b3,b4,b5;
 
-
+	SolicitaSuspender s = new SolicitaSuspender();
 	
 	class HiloContenedor extends Thread{
-	
+        pausar=false;
+
 		long contador;
 		
 		public HiloContenedor(long n) {
@@ -52,6 +54,8 @@ public class contadorApplet extends Applet implements ActionListener {
 	
 			
 		}
+		
+		
 
 
 		public long getContador() {
@@ -67,16 +71,19 @@ public class contadorApplet extends Applet implements ActionListener {
 	HiloContenedor h1 = new HiloContenedor(30);
 	HiloContenedor h2 = new HiloContenedor(50);
 
-	public void start() {
-		h1.start();
-		h2.start();
-	}
+	
 public void init() {
 	setBackground(Color.yellow);
-	add(b1=new Button("Finalizar Hilo 1"));
+	add(b1=new Button("comenzar proceso"));
 	b1.addActionListener(this);
-	add(b2=new Button("Finalizar Hilo 2"));
+	add(b2=new Button("suspender hilo1"));
 	b2.addActionListener(this);
+	add(b3=new Button("reanudar hilo1"));
+	b3.addActionListener(this);
+	add(b4=new Button("suspender hilo2"));
+	b4.addActionListener(this);
+	add(b5=new Button("reanudar hilo2"));
+	b5.addActionListener(this);
 	fuente= new Font ("Verdana", Font.BOLD,26);
 	
 }
@@ -95,10 +102,29 @@ public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
 	if(e.getSource()==b1) {
 
-	h1.interrupt();
+	h1.start();
+	h2.start();
 	}else if(e.getSource()==b2) {
 
+		h1.interrupt();
+		try {
+			s.esperandoParaReanudar();
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}else if(e.getSource()==b4){
 		h2.interrupt();
+		
+		try {
+			s.esperandoParaReanudar();
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}else if(e.getSource()==b5) {
+		s.set(false);
+
 	}
 }
 
